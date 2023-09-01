@@ -5,6 +5,7 @@ import {
   DataType,
   BeforeCreate,
   HasOne,
+  Index,
 } from 'sequelize-typescript';
 import { IUser } from '../interfaces/iuser.interface';
 import * as bcrypt from 'bcrypt';
@@ -13,6 +14,7 @@ import { Blog } from './../../../modules/blog/entities/blog.entity';
 
 @Table({ tableName: 'User' })
 export class User extends Model<User> implements IUser {
+  @Index('user-email')
   @Column({
     type: DataType.STRING,
     unique: true,

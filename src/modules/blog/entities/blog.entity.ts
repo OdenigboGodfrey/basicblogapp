@@ -5,6 +5,7 @@ import {
   DataType,
   ForeignKey,
   BelongsTo,
+  Index,
 } from 'sequelize-typescript';
 import { IBlog } from '../interfaces/blog.interface';
 import { User } from './../../../modules/user/entities/user.entity';
@@ -13,6 +14,7 @@ import { User } from './../../../modules/user/entities/user.entity';
 export class Blog extends Model<Blog> implements IBlog {
   @Column(DataType.STRING)
   content: string;
+  @Index('post-title')
   @Column(DataType.STRING)
   title: string;
   @ForeignKey(() => User)
