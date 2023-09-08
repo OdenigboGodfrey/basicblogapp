@@ -95,7 +95,7 @@ jobs:
 
   docker_build:
     runs-on: ubuntu-latest
-    needs: [build_prod]
+    # needs: [build_prod]
     if: github.ref == 'refs/heads/docker_build'
     steps:
       - uses: actions/checkout@v2
