@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    container_name: BlogApp
+    stdin_open: true
+    tty: true 
+    # build: 
+    #   context: .
+    #   dockerfile: ./Dockerfile
+    image: gvgodfrey/auxillorx-cache
+    ports:
+      - 80:3002
